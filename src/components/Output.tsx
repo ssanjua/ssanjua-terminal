@@ -1,13 +1,17 @@
 import React from 'react'
 import About from './commands/About'
-import Hello from './commands/Hello';
+import Hello from './commands/Hello'
 import Education from './commands/Education'
 import Email from './commands/Email'
 import Cv from './commands/Cv'
 import Portfolio from './commands/Portfolio'
-import Socials from './commands/Socials';
-import Whoami from './commands/Whoami';
-import Projects from './commands/Projects';
+import Socials from './commands/Socials'
+import Whoami from './commands/Whoami'
+import Projects from './commands/Projects'
+import Repo from './commands/Repo'
+import Help from './commands/Help'
+import Linkedin from './commands/Linkedin'
+
 
 type Props = {
   cmd: string
@@ -34,8 +38,14 @@ const Output: React.FC<Props> = ({ cmd }) => {
         return <Whoami />
       case 'projects':
         return <Projects />
+      case 'repo':
+        return <Repo />
+      case 'help':
+        return <Help />
+      case 'linkedin':
+        return <Linkedin />
       default:
-        return <div className='wrapper'>not found command: {cmd}</div>
+        return <div className='wrapper'>not found command: {cmd} you can try <span className='command'>'help'</span></div>
     }
   }
 

@@ -26,6 +26,9 @@ body {
 
 form {
   display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -86,6 +89,20 @@ input {
   color: rgb(164, 164, 164);
   font-weight: 600;
   margin: 0.2em 0 0.2em 0;
+}
+
+.command {
+  color:#e04421;
+  font-weight: bold;
+}
+
+.help-keys {
+  margin: 1em 0 1em 0;
+}
+
+.help-keys-main {
+  color: rgb(222, 222, 0);
+  font-weight: bold;
 }
 
 
