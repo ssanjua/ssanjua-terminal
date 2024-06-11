@@ -5,9 +5,10 @@ import Hero from "./Hero"
 
 const Terminal = () => {
   const [inputValue, setInputValue] = useState<string>("")
-  const [output, setOutput] = useState<{ command: string; response: JSX.Element | string }[]>([]);
+  const [output, setOutput] = useState<{ command: string; response: JSX.Element | string }[]>([])
   // const promptText = "guest@ssanjua:~$"
-  const [showHero, setShowHero] = useState<boolean>(true);
+  const [showHero, setShowHero] = useState<boolean>(true)
+  const [isSudoActive, setIsSudoActive] = useState<boolean>(false)
   const [suggestions, setSuggestions] = useState<string[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
   const [previousCommands, setPreviousCommands] = useState<string[]>([])
@@ -21,7 +22,7 @@ const Terminal = () => {
   }
 
   const autocompleteCommand = (value: string) => {
-    const matchingCommands = commands.filter(cmd => cmd.cmd.startsWith(value));
+    const matchingCommands = commands.filter(cmd => cmd.cmd.startsWith(value))
     const suggestions = matchingCommands.map(cmd => cmd.cmd)
     setSuggestions(suggestions)
   }
@@ -61,18 +62,25 @@ const Terminal = () => {
       setShowHero(false)
       return
     }
+    if (command.startsWith("sudo")) {
+      setIsSudoActive(true)
+    }
     setOutput((prevOutput) => [
       ...prevOutput,
-      { command, response: <Output cmd={command} /> }
+      { command, response: <Output cmd={command} resetSudo={handleResetSudo} /> }
     ])
-    setPreviousCommands(prevCommands => [command, ...prevCommands]);
+    setPreviousCommands(prevCommands => [command, ...prevCommands])
   }
 
   useEffect(() => {
-    if (inputRef.current) {
+    if (inputRef.current && !isSudoActive) {
       inputRef.current.focus()
     }
-  }, [output])
+  }, [output, isSudoActive])
+
+  const handleResetSudo = () => {
+    setIsSudoActive(false)
+  }
 
   return (
     <div className="terminal" onClick={() => inputRef.current?.focus()}>
@@ -86,18 +94,20 @@ const Terminal = () => {
             <div className="response">{line.response}</div>
           </div>
         ))}
-        <form onSubmit={handleSubmit}>
-          <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span>
-          <input
-            className="userInput"
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            ref={inputRef}
-            autoFocus
-          />
-        </form>
+         {!isSudoActive && (
+          <form onSubmit={handleSubmit}>
+            <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span>
+            <input
+              className="userInput"
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              ref={inputRef}
+              autoFocus
+            />
+          </form>
+        )}
       </div>
     </div>
   )

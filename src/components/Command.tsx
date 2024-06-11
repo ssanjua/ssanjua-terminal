@@ -22,4 +22,5 @@ export const commands: Command = [
   { cmd: "lang", desc: "change the output language", tab: 10 },
   { cmd: "welcome", desc: "display hero section", tab: 7 },
   { cmd: "whoami", desc: "about the current user", tab: 8 },
+  { cmd: "sudo", desc: "???", tab: 8 },
 ];

@@ -35,9 +35,9 @@ x;:;;X$&&&&&&&&&&$x;
           `}
       </div>
       <p>----</p>
-      <span>don't know whre to start? try typing<span className="command"> 'help'</span> or just <span className="command">'hello'</span></span>
+      <span>don't know where to start? try typing<span className="command"> 'help'</span> or just <span className="command">'hello'</span></span>
       <p>----</p>
-      <p className="signature">made with ❤️</p>
+      <span className="secret-message">klapauciuss</span> <span className="signature">made with ❤️</span>
     </div>
   )
 }

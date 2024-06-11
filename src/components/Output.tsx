@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import About from './commands/About'
 import Hello from './commands/Hello'
 import Education from './commands/Education'
@@ -14,14 +14,44 @@ import Linkedin from './commands/Linkedin'
 import Hero from './Hero'
 import Themes from './commands/Themes'
 import Lang from './commands/Lang'
-
+import Sudo from './commands/Sudo'
+import Game from './commands/Game'
+import Secret from './commands/Secret'
 
 type Props = {
-  cmd: string
-};
+  cmd: string,
+  resetSudo: () => void
+}
 
-const Output: React.FC<Props> = ({ cmd }) => {
+const Output: React.FC<Props> = ({ cmd, resetSudo }) => {
+  const [accessGranted, setAccessGranted] = useState<boolean | null>(null)
+
+  const handleAccessGranted = () => {
+    setAccessGranted(true)
+    resetSudo()
+  }
+
+  const handleAccessDenied = () => {
+    setAccessGranted(false)
+    resetSudo() 
+  }
+
   const getCommandOutput = (cmd: string) => {
+    if (cmd.startsWith('sudo')) {
+      if (accessGranted === null) {
+        return (
+          <Sudo
+            onAccessGranted={handleAccessGranted}
+            onAccessDenied={handleAccessDenied}
+          />
+        )
+      } else if (accessGranted) {
+        return <div className='wrapper'>ACCESS GRANTED<p>try <span className='command'>'game'</span></p></div>
+      } else {
+        return <div className='wrapper'>password incorrect. NOT GRANTED.</div>
+      }
+    }
+
     switch (cmd) {
       case 'about':
         return <About />
@@ -53,6 +83,11 @@ const Output: React.FC<Props> = ({ cmd }) => {
         return <Themes />
       case 'lang':
         return <Lang />
+      case 'game':
+        return <Game />
+      case 'klapauciuss':
+        return <Secret />
+
       default:
         return <div className='wrapper'>not found command: {cmd} you can try <span className='command'>'help'</span></div>
     }
