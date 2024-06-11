@@ -1,3 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  font-family: 'Source Code Pro Variable', monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #000000; 
+}
+
+.prompt {
+  font-weight: bold;
+}
+
+.prompt {
+  color: #0dbf0d; 
+  font-weight: bold; 
+}
+
+.ssanjua-prompt {
+  color: #007bb9; 
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  font-family: 'Source Code Pro Variable', monospace;
+  border: none;
+  background: none; 
+  color: #ffffff;
+  width: 100%; 
+  outline: none; 
+  font-size: 1em; 
+  caret-color:#be6a09;
+  margin-left: 8px;
+}
+
+
+.response {
+  color: #ffffff; 
+  margin-left: 2em;
+}
+
+.terminal {
+  color: #ffffff; 
+  padding: 2em; 
+}
+
+.wrapper {
+  padding: 0.5em 0 0.5em 0;
+}
+
+.education h3 {
+  font-size: 1em;
+}
+
+.education p {
+  margin-bottom: 1.5em;
+  font-size: 0.90em;
+  color: rgb(164, 164, 164);
+}
+
+.education {
+ line-height: 0.2em;
+}
