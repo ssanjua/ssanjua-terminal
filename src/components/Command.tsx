@@ -9,6 +9,7 @@ export const commands: Command = [
   { cmd: "clear", desc: "clear the terminal", tab: 8 },
   { cmd: "projects", desc: "view my main projects", tab: 5 },
   { cmd: "education", desc: "my education background", tab: 4 },
+  { cmd: "cv", desc: "click to download my cv", tab: 11 },
   { cmd: "email", desc: "send me an email", tab: 8 },
   { cmd: "portfolio", desc: "go to my portfolio", tab: 4 },
   { cmd: "help", desc: "check commands", tab: 9 },

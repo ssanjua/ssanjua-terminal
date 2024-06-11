@@ -49,13 +49,13 @@ const Terminal = () => {
         {output.map((line, index) => (
           <div key={index}>
             <div>
-              <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua:~$</span><span>{line.command}</span>
+            <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span><span>{line.command}</span>
             </div>
             <div className="response">{line.response}</div>
           </div>
         ))}
         <form onSubmit={handleSubmit}>
-          <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span>:~$</span>
+          <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span>
           <input
             className="userInput"
             type="text"
