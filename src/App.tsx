@@ -1,6 +1,8 @@
 import './App.css'
 import Terminal from './components/Terminal'
-import '@fontsource-variable/source-code-pro';
+import '@fontsource-variable/source-code-pro'
+import '@fontsource-variable/honk'
+import '@fontsource/press-start-2p';
 
 const App = () => {
 

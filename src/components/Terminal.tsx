@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react"
 import { commands } from "./Command"
 import Output from "./Output"
+import Hero from "./Hero"
 
 const Terminal = () => {
   const [inputValue, setInputValue] = useState<string>("")
   const [output, setOutput] = useState<{ command: string; response: JSX.Element | string }[]>([]);
   // const promptText = "guest@ssanjua:~$"
+  const [showHero, setShowHero] = useState<boolean>(true);
   const [suggestions, setSuggestions] = useState<string[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
   const [previousCommands, setPreviousCommands] = useState<string[]>([])
@@ -45,7 +47,7 @@ const Terminal = () => {
       }
     } else if (event.key === "Escape") {
       setInputValue("")
-    }  else if (event.key === "Tab") {
+    } else if (event.key === "Tab") {
       event.preventDefault()
       if (suggestions.length > 0) {
         setInputValue(suggestions[0])
@@ -56,6 +58,7 @@ const Terminal = () => {
   const handleCommand = (command: string) => {
     if (command === "clear") {
       setOutput([])
+      setShowHero(false)
       return
     }
     setOutput((prevOutput) => [
@@ -73,11 +76,12 @@ const Terminal = () => {
 
   return (
     <div className="terminal" onClick={() => inputRef.current?.focus()}>
+      {showHero && <Hero />}
       <div>
         {output.map((line, index) => (
           <div key={index}>
             <div>
-            <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span><span>{line.command}</span>
+              <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span><span>{line.command}</span>
             </div>
             <div className="response">{line.response}</div>
           </div>

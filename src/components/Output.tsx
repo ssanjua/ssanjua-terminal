@@ -11,6 +11,9 @@ import Projects from './commands/Projects'
 import Repo from './commands/Repo'
 import Help from './commands/Help'
 import Linkedin from './commands/Linkedin'
+import Hero from './Hero'
+import Themes from './commands/Themes'
+import Lang from './commands/Lang'
 
 
 type Props = {
@@ -44,6 +47,12 @@ const Output: React.FC<Props> = ({ cmd }) => {
         return <Help />
       case 'linkedin':
         return <Linkedin />
+      case 'welcome':
+        return <Hero showPrompt={false} />
+      case 'themes':
+        return <Themes />
+      case 'lang':
+        return <Lang />
       default:
         return <div className='wrapper'>not found command: {cmd} you can try <span className='command'>'help'</span></div>
     }

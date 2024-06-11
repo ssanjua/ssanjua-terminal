@@ -48,18 +48,56 @@ input {
   caret-color: #0dbf0d;
 }
 
+.response {
+  margin-left: 1em;
+}
+
 .description {
   font-size: 14px;
 }
 
-.response {
-  color: #ffffff;
-  margin-left: 2em;
+.terminal-title {
+  margin: 0;
+  font-size: 3em;
+  font-family: 'Press Start 2P', system-ui;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  letter-spacing: .15em;
+  width: 8ch;
+  animation: typing 2s steps(30, end), blink-caret .80s;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 8ch;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
 }
 
 .terminal {
   color: #ffffff;
   padding: 2em;
+}
+
+.signature {
+  font-size: 0.8em;
+  margin-top: 0;
 }
 
 .wrapper {
@@ -79,6 +117,20 @@ input {
   margin: 0.2em 0 0.2em 0;
 }
 
+.ascii-art {
+  font-family: monospace;
+  white-space: pre;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .projects h3 {
   font-size: 1em;
   margin-bottom: 0.2em;
@@ -92,7 +144,7 @@ input {
 }
 
 .command {
-  color:#e04421;
+  color: #e04421;
   font-weight: bold;
 }
 
@@ -104,5 +156,3 @@ input {
   color: rgb(222, 222, 0);
   font-weight: bold;
 }
-
-
