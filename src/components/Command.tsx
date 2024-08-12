@@ -6,8 +6,7 @@ export type Command = {
 
 export const commands: Command = [
   { cmd: "about", desc: "about Pau Pallares aka ssanjua", tab: 9 },
-  { cmd: "clear", desc: "clear the terminal and leave the welcome message", tab: 9 },
-  { cmd: "clearall", desc: "clear the entire terminal", tab: 6 },
+  { cmd: "clear", desc: "clear the terminal", tab: 9 },
   { cmd: "hello", desc: "best way to start a conversation", tab: 9 },
   { cmd: "projects", desc: "view my main projects", tab: 6 },
   { cmd: "education", desc: "my education background", tab: 5 },

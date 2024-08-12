@@ -16,7 +16,7 @@ const socials = [
   {
     id: 3,
     title: "Twitch",
-    url: "https:/twitch.tv/ssanjuaa",
+    url: "https://twitch.tv/ssanjuaa",
     username: "tv/ssanjuaa",
     tab: 5
   },
