@@ -92,6 +92,11 @@ input {
   padding: 2em;
 }
 
+label {
+  display: inline-flex;
+  align-items: center;
+}
+
 .signature {
   font-size: 0.8em;
   margin-top: 0;

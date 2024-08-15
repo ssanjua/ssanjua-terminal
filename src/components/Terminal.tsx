@@ -82,6 +82,13 @@ const Terminal = () => {
     setIsSudoActive(false)
   }
 
+  useEffect(() => {
+  if (inputRef.current && !isSudoActive) {
+    inputRef.current.scrollIntoView({ behavior: "smooth" })
+    inputRef.current.focus()
+  }
+}, [output, inputValue, isSudoActive])
+
   return (
     <div className="terminal" onClick={() => inputRef.current?.focus()}>
       {showHero && <Hero />}
@@ -94,20 +101,24 @@ const Terminal = () => {
             <div className="response">{line.response}</div>
           </div>
         ))}
-         {!isSudoActive && (
+        {!isSudoActive && (
           <form onSubmit={handleSubmit}>
-            <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span>
-            <input
-              className="userInput"
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              ref={inputRef}
-              autoFocus
-            />
+            <label>
+              <span className="prompt">guest</span>@<span className="ssanjua-prompt">ssanjua</span><span className="end-prompt">:~$</span>
+              <input
+                className="userInput"
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                ref={inputRef}
+                autoFocus
+              />
+            </label>
           </form>
         )}
+        {/* div to scroll */}
+        <div ref={inputRef} />
       </div>
     </div>
   )

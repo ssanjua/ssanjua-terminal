@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ showPrompt = true }) => {
       )}
       <div>
         <p>hi! my name is Paula, also know as</p>
-        <h3 className="terminal-title">SSANJUA</h3>
+        <h1 className="terminal-title">SSANJUA</h1>
       </div>
       <div className="ascii-art">
 
