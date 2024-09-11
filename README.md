@@ -1,6 +1,6 @@
 # MY TERMINAL PORTFOLIO 👩🏻‍💻
 
-![screenshot](public/ssanjuaterminal2.webp)
+![screenshot](public/oG-ssanjuaTerminal_v2.webp)
 
 ### 🚀 technologies used
 
