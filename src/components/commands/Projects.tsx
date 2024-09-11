@@ -3,6 +3,13 @@ import React from 'react'
 
 const projects = [
   {
+    id: 5,
+    title: "indie podcasts",
+    desc: "web application designed for small and indie podcasts, easy to share, to use and to love.",
+    url: "https://indiepodcasts.vercel.app/",
+    shorturl: "indiepodcasts.app",
+  },
+  {
     id: 1,
     title: "audiovisual web page",
     desc: "my personal audiovisual website, yeah I'm a filmmaker too :D.",
@@ -39,7 +46,7 @@ const Projects: React.FC = () => {
       {projects.map(({ id, title, desc, url, shorturl }) => (
         <div key={id} className='projects'>
           <h3>˂ {title} ˃</h3>
-          <a href={url}>{shorturl}</a>
+          <a href={url} target="_blank">{shorturl}</a>
           <p>{desc}</p>
          
         </div>
