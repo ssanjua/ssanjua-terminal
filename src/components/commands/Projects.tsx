@@ -17,6 +17,13 @@ const projects = [
     shorturl: "ss-link.vercel.app",
   },
   {
+    id: 7,
+    title: "ss4njua blog",
+    desc: "my personal blog, a collection of my thoughts and projects.",
+    url: "https://ss4njua.vercel.app/",
+    shorturl: "ss4njua.vercel.app",
+  },
+  {
     id: 1,
     title: "audiovisual web page",
     desc: "my personal audiovisual website, yeah I'm a filmmaker too :D.",
@@ -32,14 +39,14 @@ const projects = [
   },
   {
     id: 3,
-    title: "YarcoDelivery",
+    title: "yarco delivery",
     desc: "a platform where you can order food, inspired by my hometown favourite meals.",
     url: "https://sanjuan-delivery-app-frontend.onrender.com/",
     shorturl: "yarcodelivery.com",
   },
   {
     id: 4,
-    title: "Harvey's app",
+    title: "harvey's app",
     desc: "a fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type!",
     url: "https://ssanjua.pythonanywhere.com/",
     shorturl: "harveysapp.com",
