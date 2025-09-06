@@ -17,6 +17,7 @@ import Lang from './commands/Lang'
 import Sudo from './commands/Sudo'
 import Game from './commands/Game'
 import Secret from './commands/Secret'
+import Experience from './commands/Experience'
 
 type Props = {
   cmd: string,
@@ -87,6 +88,8 @@ const Output: React.FC<Props> = ({ cmd, resetSudo }) => {
         return <Game />
       case 'klapauciuss':
         return <Secret />
+      case 'experience':
+        return <Experience />
 
       default:
         return <div className='wrapper'>not found command: {cmd} you can try <span className='command'>'help'</span></div>

@@ -10,6 +10,13 @@ const projects = [
     shorturl: "indiepodcasts.app",
   },
   {
+    id: 6,
+    title: "personal linktree",
+    desc: "my personal linktree, a collection of my social media accounts.",
+    url: "https://ss-link.vercel.app/",
+    shorturl: "ss-link.vercel.app",
+  },
+  {
     id: 1,
     title: "audiovisual web page",
     desc: "my personal audiovisual website, yeah I'm a filmmaker too :D.",

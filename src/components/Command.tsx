@@ -8,6 +8,7 @@ export const commands: Command = [
   { cmd: "about", desc: "about Pau Pallares aka ssanjua", tab: 9 },
   { cmd: "clear", desc: "clear the terminal", tab: 9 },
   { cmd: "hello", desc: "best way to start a conversation", tab: 9 },
+  { cmd: "experience", desc: "companies I worked for", tab: 4 },
   { cmd: "projects", desc: "view my main projects", tab: 6 },
   { cmd: "education", desc: "my education background", tab: 5 },
   { cmd: "cv", desc: "click to download my CV", tab: 12 },
